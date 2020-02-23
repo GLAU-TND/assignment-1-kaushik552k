@@ -37,6 +37,12 @@ public class Contact implements contactADT<Person> {
     @Override
     public void remove(){
         Node response = null;
+        if(head != null) {
+            Node<Person> temp = head;
+            Node previous = null;
+            int count = 0;
+
+        }
 
     }
 
@@ -49,4 +55,17 @@ public class Contact implements contactADT<Person> {
     public void viewAll(){
 
     }
+
+    public int printName(){
+        System.out.println( "---Here are all your contacts---" );
+        Node<Person> temp = head;
+        int sNo = 1;
+        while(temp != null) {
+            System.out.println( sNo++ + ". " + temp.getData().getFirstName() + " " + temp.getData().getLastName() );
+            temp = temp.getNext();
+        }
+        System.out.print( "Press the number against the contact to delete it:" );
+        return sc.nextInt();
+    }
+
 }
