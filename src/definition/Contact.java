@@ -1,9 +1,15 @@
 package definition;
 
 import adt.contactADT;
+import helper.Node;
 import helper.Person;
 
+import java.util.Scanner;
+
 public class Contact implements contactADT<Person> {
+    Scanner sc = new Scanner( System.in );
+    Node<Person> head;
+
 
     @Override
     public void add(Person data){
