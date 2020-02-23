@@ -36,6 +36,7 @@ public class Contact implements contactADT<Person> {
 
     @Override
     public void remove(){
+        Node response = null;
 
     }
 
