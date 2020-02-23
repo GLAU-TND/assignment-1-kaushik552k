@@ -25,7 +25,13 @@ public class Contact implements contactADT<Person> {
         if(head == null) {
             head = node;
         }
-
+        else{
+            Node temp = head;
+            while(temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext( node );
+        }
     }
 
     @Override
