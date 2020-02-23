@@ -19,6 +19,28 @@ public class Main {
                     "Press 5 to exit program " );
             int choice = sc.nextInt();
             sc.nextLine();
+            switch (choice) {
+                case 1:
+                    contact.add( maintainContact.add() );
+                    break;
+                case 2:
+                    contact.sortList();
+                    contact.viewAll();
+                    break;
+                case 3:
+                    System.out.println( "You could search for a contact from their first names:" );
+                    String firstName = sc.nextLine();
+                    contact.search( firstName );
+                    break;
+                case 4:
+                    contact.remove();
+                    break;
+                case 5:
+                    break;
+            }
+            if(choice == 5) {
+                break;
+            }
 
         }
     }
