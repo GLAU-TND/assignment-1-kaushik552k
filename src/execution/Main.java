@@ -41,6 +41,12 @@ public class Main {
             if(choice == 5) {
                 break;
             }
+            else{
+                System.out.println( "continue?(y/n)" );
+                String c = sc.nextLine();
+                if(c.equals( "n" ))
+                    break;
+            }
 
         }
     }
