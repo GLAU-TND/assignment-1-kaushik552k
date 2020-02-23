@@ -67,6 +67,13 @@ public class Contact implements contactADT<Person> {
     @Override
     public void search(String firstName){
         Node<Person> temp = head;
+        int count = 0;
+        //to count the number of persons with the same name
+        while(temp != null) {
+            if(temp.getData().getFirstName().equals( firstName )) {
+                count++;
+            }
+        }
 
     }
 
