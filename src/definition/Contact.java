@@ -20,6 +20,11 @@ public class Contact implements contactADT<Person> {
 
     @Override
     public void add(Person data){
+        Node node = new Node( data );
+
+        if(head == null) {
+            head = node;
+        }
 
     }
 
