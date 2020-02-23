@@ -115,5 +115,9 @@ public class Contact implements contactADT<Person> {
         return sc.nextInt();
     }
 
+    public void sortList(){
+        //Node current will point to head
+
+    }
 
 }
