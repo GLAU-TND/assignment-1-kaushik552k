@@ -25,7 +25,7 @@ public class MaintainContact {
             if(sc.nextLine().equals( "n" ))
                 break;
         }
-
+        person.setContactNumber( number );
         return person;
     }
 }
