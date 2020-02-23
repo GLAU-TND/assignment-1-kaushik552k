@@ -26,6 +26,12 @@ public class MaintainContact {
                 break;
         }
         person.setContactNumber( number );
+        System.out.print( "Would you like to add email address? (y/n): " );
+        if(sc.nextLine().equals( "y" )) {
+            System.out.print( "Email:" );
+            person.setEmail( sc.nextLine() );
+
+        }
         return person;
     }
 }
