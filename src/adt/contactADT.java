@@ -1,8 +1,6 @@
 package adt;
 
-import helper.Person;
-
-public interface contactADT {
+public interface contactADT<Person> {
     /**
      * this method is used to add a person details
      *
