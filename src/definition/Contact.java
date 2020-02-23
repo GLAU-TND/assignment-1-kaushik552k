@@ -41,6 +41,24 @@ public class Contact implements contactADT<Person> {
             Node<Person> temp = head;
             Node previous = null;
             int count = 0;
+            int index = printName();
+            sc.nextLine();
+            while(count < index - 1) {
+                previous = temp;
+                temp = temp.getNext();
+                count++;
+            }
+            System.out.println( temp.getData().getFirstName() + " " + temp.getData().getLastName() + "'s contact deleted from the list!" );
+
+            if(previous != null) {
+                response = previous.getNext();
+                previous.setNext( null );
+
+            }
+            else{
+                response = head;
+                head = null;
+            }
 
         }
 
@@ -48,6 +66,7 @@ public class Contact implements contactADT<Person> {
 
     @Override
     public void search(String firstName){
+        Node<Person> temp = head;
 
     }
 
