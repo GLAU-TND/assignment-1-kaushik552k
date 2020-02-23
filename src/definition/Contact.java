@@ -101,7 +101,6 @@ public class Contact implements contactADT<Person> {
         }
         System.out.println();
 
-
     }
 
     public int printName(){
@@ -115,5 +114,6 @@ public class Contact implements contactADT<Person> {
         System.out.print( "Press the number against the contact to delete it:" );
         return sc.nextInt();
     }
+
 
 }
