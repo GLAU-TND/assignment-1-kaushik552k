@@ -14,6 +14,10 @@ public class Contact implements contactADT<Person> {
         head = null;
     }
 
+    public Node getHead(){
+        return head;
+    }
+
     @Override
     public void add(Person data){
 
