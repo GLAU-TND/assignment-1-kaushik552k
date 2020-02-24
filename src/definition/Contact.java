@@ -8,7 +8,9 @@ import java.util.Scanner;
 
 public class Contact implements contactADT<Person> {
     Scanner sc = new Scanner( System.in );
-    Node<Person> head;
+    int size = 0;
+    private Node<Person> head;
+    private Node<Person> iter;
 
     public Contact(){
         head = null;
@@ -17,6 +19,11 @@ public class Contact implements contactADT<Person> {
     public Node getHead(){
         return head;
     }
+
+    public void setHead(Node<Person> node){
+        head = node;
+        iter = head;
+    }   //setter for head
 
     @Override
     public void add(Person data){
@@ -32,36 +39,36 @@ public class Contact implements contactADT<Person> {
             }
             temp.setNext( node );
         }
+        size++;
     }
 
     @Override
     public void remove(){
-        Node response = null;
-        if(head != null) {
-            Node<Person> temp = head;
-            Node previous = null;
-            int count = 0;
-            int index = printName();
-            sc.nextLine();
-            while(count < index - 1) {
+        Node<Person> temp = head;
+        Node previous = null;
+        int item = printName();
+        if(item == 1) {
+            System.out.println( temp.getData().getFirstName() + " " + temp.getData().getLastName() + "'s contact deleted from list!" );
+            head = temp.getNext();
+            temp = head;
+        }
+        else{
+            for (int i = 1; i <= size; i++) {
+                if(i == item) {
+                    System.out.println( temp.getData().getFirstName() + " " + temp.getData().getLastName() + "'s contact deleted from list!" );
+                    previous.setNext( temp.getNext() );
+                    size--;
+                    break;
+                }
                 previous = temp;
                 temp = temp.getNext();
-                count++;
             }
-            System.out.println( temp.getData().getFirstName() + " " + temp.getData().getLastName() + "'s contact deleted from the list!" );
-
-            if(previous != null) {
-                response = previous.getNext();
-                previous.setNext( null );
-
-            }
-            else{
-                response = head;
-                head = null;
-            }
-
         }
+    }
 
+    //Helper method to check if linked list is empty or not
+    public boolean isEmpty(){
+        return head == null;
     }
 
     @Override
