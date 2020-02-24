@@ -6,7 +6,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private ArrayList<String> contactNumber;
-    private String email;
+    private String email = "";
 
     public String getFirstName(){
         return firstName;
@@ -42,9 +42,32 @@ public class Person {
 
     @Override
     public String toString(){
-        return "First Name:" + firstName + "\n" +
-                "Last Name:" + lastName + "\n" +
-                "Contact Number:" + contactNumber + "\n" +
-                "Email=" + email;
+        if(email != "") {
+            if(contactNumber.size() > 1) {
+                return "First Name:" + firstName + "\n" +
+                        "Last Name:" + lastName + "\n" +
+                        "Contact Number(s):" + contactNumber + "\n" +
+                        "Email:" + this.email;
+            }
+            else if(contactNumber.size() == 1) {
+                return "First Name:" + firstName + "\n" +
+                        "Last Name:" + lastName + "\n" +
+                        "Contact Number:" + contactNumber + "\n" +
+                        "Email:" + email;
+            }
+        }
+        else{
+            if(contactNumber.size() == 1) {
+                return "First Name:" + firstName + "\n" +
+                        "Last Name:" + lastName + "\n" +
+                        "Contact Number:" + this.contactNumber + "\n";
+            }
+            else if(contactNumber.size() > 1) {
+                return "First Name:" + firstName + "\n" +
+                        "Last Name:" + lastName + "\n" +
+                        "Contact Number(s):" + contactNumber;
+            }
+        }
+        return null;
     }
 }
